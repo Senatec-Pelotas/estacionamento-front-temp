@@ -6,4 +6,12 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  background: #f0f0f0;
+}
+
+th,
+td {
+  text-align: start;
+  padding-inline: 1rem;
+  padding-block: 6px;
 }

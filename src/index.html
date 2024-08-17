@@ -7,55 +7,251 @@
     <link href="./output.css" rel="stylesheet" />
   </head>
   <body class="bg-[#F0F0F0] text-white">
-    <header class="w-full h-[5.5rem] bg-[#367cdd]"></header>
-    <main>
-      <section
-        class="flex flex-col mt-[1.65rem] w-[24.5rem] h-[29.5rem] ml-[3.10rem] bg-[#c8ccdc85] items-center rounded-[6px]"
-      >
+    <header
+      class="w-full py-3 bg-main-blue flex items-center px-12 justify-between shadow-sm shadow-[#a7a7a7]"
+    >
+      <img src="../public/temp-logo.png" alt="" class="w-28" />
+
+      <nav><a href="" class="font-semibold">Histórico</a></nav>
+    </header>
+
+    <main class="mt-5 gap-10 mx-12 grid md:grid-cols-4">
+      <!-- FORMULÁRIO -->
+      <section class="flex flex-col items-center rounded-[6px]">
         <h2
-          class="bg-[#367cdd] w-full py-3 uppercase font-semibold text-center rounded-t-md"
+          class="bg-[#367cdd] w-full py-3 font-semibold uppercase text-center rounded-md mb-2"
         >
           cadastro do veículo
         </h2>
 
-        <form action="" class="flex flex-col items-center text-black">
-          <input
-            type="text"
-            placeholder="nome:"
-            class="mt-[2rem] pl-[0.75rem] uppercase placeholder-[#000] h-[2.30rem] w-[21.5rem] rounded-[6px]"
-          />
+        <form
+          action=""
+          class="flex bg-[#D2D5E1] rounded-md flex-col [&>*]:uppercase text-sm gap-5 py-6 items-center text-black px-4 w-full"
+        >
+          <div
+            class="w-full flex items-center bg-white px-2 py-1 rounded-md shadow-sm border border-gray-400 shadow-gray-400"
+          >
+            <label for="cliente">Cliente:</label>
+            <input
+              type="text"
+              name="cliente"
+              class="p-1 focus:outline-none w-full"
+            />
+          </div>
 
-          <input
-            type="text"
-            placeholder="veículo:"
-            class="mt-[2rem] pl-[0.75rem] uppercase placeholder-[#000] h-[2.30rem] w-[21.5rem] rounded-[6px]"
-          />
+          <div
+            class="w-full flex items-center bg-white px-2 py-1 rounded-md shadow-sm border border-gray-400 shadow-gray-400"
+          >
+            <label for="veiculo">Veículo:</label>
+            <input
+              type="text"
+              name="veiculo"
+              placeholder="TIPO/COR/MODELO"
+              class="p-1 focus:outline-none w-full"
+            />
+          </div>
 
-          <input
-            type="text"
-            placeholder="placa:"
-            class="mt-[2rem] pl-[0.75rem] uppercase placeholder-[#000] h-[2.30rem] w-[21.5rem] rounded-[6px]"
-          />
+          <div
+            class="w-full flex items-center bg-white px-2 py-1 rounded-md shadow-sm border border-gray-400 shadow-gray-400"
+          >
+            <label for="placa">Placa:</label>
+            <input
+              type="text"
+              name="placa"
+              class="p-1 focus:outline-none w-full"
+            />
+          </div>
 
-          <div class="flex justify-between w-full">
+          <div class="grid grid-cols-2 justify-between w-full gap-6">
             <input
               type="date"
-              class="mt-[2rem] p-[0.75rem] uppercase placeholder-[#000] h-[2.30rem] w-[9.6rem] rounded-[6px]"
+              class="p-[0.75rem] placeholder-black py-2 w-full h-min rounded-[6px] shadow-sm border border-gray-400 shadow-gray-400"
             />
 
             <input
               type="time"
-              class="mt-[2rem] mb-[3.55rem] p-[0.75rem] uppercase placeholder-[#000] h-[2.30rem] w-[9.6rem] rounded-[6px]"
+              class="mb-[3.55rem] p-[0.75rem] placeholder-black py-2 w-full rounded-[6px] shadow-sm border border-gray-400 shadow-gray-400"
             />
           </div>
           <button
             type="submit"
-            class="bg-[#367cdd] w-full mx-24 py-2 font-semibold uppercase mb-[1.85rem] rounded-[6px] text-white"
+            class="bg-[#367cdd] w-[80%] mx-24 py-2 font-semibold mb-[1.85rem] rounded-[6px] text-white"
           >
             salvar
           </button>
         </form>
       </section>
+
+      <!--  -->
+
+      <!-- TABELA + PESQUISA -->
+
+      <div class="lg:col-span-3 w-full">
+        <form
+          action=""
+          class="bg-[#D2D5E1] flex w-fit items-center gap-1 px-1 rounded-md ml-auto mb-1 shadow-sm shadow-gray-400"
+        >
+          <input type="text" class="bg-inherit p-1" />
+          <img src="../public/search-icon.png" alt="" class="w-6 h-6" />
+        </form>
+
+        <section class="text-dark-gray uppercase w-full">
+          <table
+            class="w-full border-separate border-spacing-y-1 font-semibold text-sm"
+          >
+            <thead>
+              <tr
+                class="bg-main-blue text-white [&>*:first-child]:rounded-tl-md [&>*:last-child]:rounded-tr-md"
+              >
+                <th>cliente</th>
+                <th>veículo</th>
+                <th>placa</th>
+                <th>entrada</th>
+                <th>tipo</th>
+                <th>valor a pagar</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody
+              class="[&>*:nth-child(even)]:bg-[#b9bdcb] [&>*]:bg-[#D2D5E1] [&>*:last-child>*:first-child]:rounded-bl-md [&>*:last-child>*:last-child]:rounded-br-md"
+            >
+              <tr>
+                <td>Marcos</td>
+                <td>carro/gol/azul</td>
+                <td>xx09310</td>
+                <td>01/01/01 15:30</td>
+                <td>mensal</td>
+                <td>R$ 15,00</td>
+                <td>
+                  <img src="../public/3-dot-menu.png" alt="" class="w-1" />
+                </td>
+              </tr>
+              <tr>
+                <td>Marcos</td>
+                <td>carro/gol/azul</td>
+                <td>xx09310</td>
+                <td>01/01/01 15:30</td>
+                <td>mensal</td>
+                <td>R$ 15,00</td>
+                <td>
+                  <img src="../public/3-dot-menu.png" alt="" class="w-1" />
+                </td>
+              </tr>
+              <tr>
+                <td>Marcos</td>
+                <td>carro/gol/azul</td>
+                <td>xx09310</td>
+                <td>01/01/01 15:30</td>
+                <td>mensal</td>
+                <td>R$ 15,00</td>
+                <td>
+                  <img src="../public/3-dot-menu.png" alt="" class="w-1" />
+                </td>
+              </tr>
+              <tr>
+                <td>Marcos</td>
+                <td>carro/gol/azul</td>
+                <td>xx09310</td>
+                <td>01/01/01 15:30</td>
+                <td>mensal</td>
+                <td>R$ 15,00</td>
+                <td>
+                  <img src="../public/3-dot-menu.png" alt="" class="w-1" />
+                </td>
+              </tr>
+              <tr>
+                <td>Marcos</td>
+                <td>carro/gol/azul</td>
+                <td>xx09310</td>
+                <td>01/01/01 15:30</td>
+                <td>mensal</td>
+                <td>R$ 15,00</td>
+                <td>
+                  <img src="../public/3-dot-menu.png" alt="" class="w-1" />
+                </td>
+              </tr>
+              <tr>
+                <td>Marcos</td>
+                <td>carro/gol/azul</td>
+                <td>xx09310</td>
+                <td>01/01/01 15:30</td>
+                <td>mensal</td>
+                <td>R$ 15,00</td>
+                <td>
+                  <img src="../public/3-dot-menu.png" alt="" class="w-1" />
+                </td>
+              </tr>
+              <tr>
+                <td>Marcos</td>
+                <td>carro/gol/azul</td>
+                <td>xx09310</td>
+                <td>01/01/01 15:30</td>
+                <td>mensal</td>
+                <td>R$ 15,00</td>
+                <td>
+                  <img src="../public/3-dot-menu.png" alt="" class="w-1" />
+                </td>
+              </tr>
+              <tr>
+                <td>Marcos</td>
+                <td>carro/gol/azul</td>
+                <td>xx09310</td>
+                <td>01/01/01 15:30</td>
+                <td>mensal</td>
+                <td>R$ 15,00</td>
+                <td>
+                  <img src="../public/3-dot-menu.png" alt="" class="w-1" />
+                </td>
+              </tr>
+              <tr>
+                <td>Marcos</td>
+                <td>carro/gol/azul</td>
+                <td>xx09310</td>
+                <td>01/01/01 15:30</td>
+                <td>mensal</td>
+                <td>R$ 15,00</td>
+                <td>
+                  <img src="../public/3-dot-menu.png" alt="" class="w-1" />
+                </td>
+              </tr>
+              <tr>
+                <td>Marcos</td>
+                <td>carro/gol/azul</td>
+                <td>xx09310</td>
+                <td>01/01/01 15:30</td>
+                <td>mensal</td>
+                <td>R$ 15,00</td>
+                <td>
+                  <img src="../public/3-dot-menu.png" alt="" class="w-1" />
+                </td>
+              </tr>
+              <tr>
+                <td>Marcos</td>
+                <td>carro/gol/azul</td>
+                <td>xx09310</td>
+                <td>01/01/01 15:30</td>
+                <td>mensal</td>
+                <td>R$ 15,00</td>
+                <td>
+                  <img src="../public/3-dot-menu.png" alt="" class="w-1" />
+                </td>
+              </tr>
+              <tr>
+                <td>Marcos</td>
+                <td>carro/gol/azul</td>
+                <td>xx09310</td>
+                <td>01/01/01 15:30</td>
+                <td>mensal</td>
+                <td>R$ 15,00</td>
+                <td>
+                  <img src="../public/3-dot-menu.png" alt="" class="w-1" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+      <!--  -->
     </main>
   </body>
 </html>
