@@ -6,15 +6,30 @@
     <title>Document</title>
     <link href="./output.css" rel="stylesheet" />
   </head>
-  <body>
-    <!--
-        No terminal:
-        npm i (na primeira vez após clonar o repositório)
+  <body class="bg-[#F0F0F0]">
+    <header class="w-[90rem] h-[5.5rem] bg-[#367cdd]"></header>
 
-        e toda vez que abrir o projeto no vscode:
-        npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+    <main>
+        <section class="flex flex-col mt-[1.65rem] w-[24.5rem] h-[29.5rem] ml-[3.10rem] bg-[#c8ccdc85] items-center rounded-[6px]">
 
-    -->
-    <p class="bg-blue-400">teste</p>
-  </body>
+            <h2 class=" bg-[#367cdd] w-[24.5rem] h-[3.5rem] text-center rounded-[6px]">cadastro do veículo</h2>
+
+            <form action="" class="flex flex-col ">
+              
+                <input type="text" placeholder="nome:" class="mt-[2rem] pl-[0.75rem] uppercase placeholder-[#000] h-[2.30rem] w-[21.5rem] rounded-[6px]">
+            
+                <input type="text" placeholder="veículo:" class="mt-[2rem] pl-[0.75rem] uppercase placeholder-[#000] h-[2.30rem] w-[21.5rem] rounded-[6px]">
+            
+                <input type="text" placeholder="placa:" class="mt-[2rem] pl-[0.75rem] uppercase placeholder-[#000] h-[2.30rem] w-[21.5rem] rounded-[6px]">
+            </form>
+
+            <form action="" class="flex gap-[2.15rem]">
+                <input type="date" class="mt-[2rem] p-[0.75rem] uppercase placeholder-[#000] h-[2.30rem] w-[9.6rem] rounded-[6px]">
+            
+                <input type="time" class="mt-[2rem] mb-[3.55rem] p-[0.75rem] uppercase placeholder-[#000] h-[2.30rem] w-[9.6rem] rounded-[6px]">
+            </form>
+
+            <button type="submit" class="bg-[#367cdd] w-[15.6rem] h-[2.5rem] mb-[1.85rem] rounded-[6px]">salvar</button>
+        </section>
+    </main>
 </html>
